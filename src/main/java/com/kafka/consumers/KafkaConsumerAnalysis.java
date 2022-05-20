@@ -25,6 +25,7 @@ public class KafkaConsumerAnalysis {
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, brokerList);
         props.put(ConsumerConfig.GROUP_ID_CONFIG, groupId);
+        props.put(ConsumerConfig.INTERCEPTOR_CLASSES_CONFIG, ConsumerInterceptorTTL.class.getName());
         props.put(ConsumerConfig.CLIENT_ID_CONFIG, "consumer.client.id.demo");
         return props;
     }
